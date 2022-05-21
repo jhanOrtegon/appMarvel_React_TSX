@@ -2,16 +2,22 @@ import React from 'react'
 import { Route, Routes } from 'react-router-dom';
 import LoginV from '../views/Login/index';
 import DcV from '../views/Dc/index';
+import NavbarV from '../views/Ui/Navbar/index';
 
 const Dashboard = () => {
     return (
-        <Routes>
-            <Route path='dashboard/dc' element={<DcV />} />
-            <Route path='dashboard/' element={<DcV />} />
-            {/* <Route path='dashboard/marvel' element={<MarvelV />} />
+        <>
+            <NavbarV />
+            <div className='container'>
+                <Routes>
+                    <Route path='dashboard/dc' element={<DcV />} />
+                    <Route path='dashboard/' element={<DcV />} />
+                    {/* <Route path='dashboard/marvel' element={<MarvelV />} />
             <Route path='dashboard/search' element={<SearchV />} /> */}
-            <Route path='/*' element={<LoginV />} />
-        </Routes>
+                    <Route path='/*' element={<LoginV />} />
+                </Routes>
+            </div>
+        </>
     )
 }
 
