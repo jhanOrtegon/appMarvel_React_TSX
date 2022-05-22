@@ -4,7 +4,7 @@ import { TLoginC } from './types'
 const LoginC: React.FC<TLoginC> = ({ handleChange, handleSubmit }) => {
 
     return (
-        <div className='container w-25 mt-5 h-100'>
+        <div className='container w-25 mt-5 h-100 animate__animated animate__fadeIn'>
             <header className='mb-3'>
                 <h3>Login</h3>
             </header>

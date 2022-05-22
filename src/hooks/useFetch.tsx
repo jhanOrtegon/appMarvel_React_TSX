@@ -8,7 +8,6 @@ const useFetch = (enpoint: string) => {
         setDataFetch(e => {
             return { ...e, loading: true }
         })
-        console.log('cambio');
         fetch(enpoint)
             .then(e => e.json())
             .then(e => setDataFetch({ data: e, error: false, loading: false }))

@@ -18,7 +18,7 @@ export const ContainerHeroes = styled.div`
 export const Heroe = styled.div`
 `
 export const HeroeFooter = styled.div`
-    border: 1px solid black;
+    border: 1px solid #ccc;
     padding: 5px;
     text-align: center;
 `

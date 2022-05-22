@@ -2,7 +2,6 @@ import { TStore } from "../types";
 import { EAuth } from './enum'
 
 export const storeLogin: TStore = (state = {}, action) => {
-    console.log(action, 'action');
     switch (action.type) {
         case EAuth.login:
             return {

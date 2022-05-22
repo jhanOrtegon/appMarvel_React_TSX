@@ -12,7 +12,7 @@ const NavbarC: React.FC = () => {
             <div className="container">
                 <div style={{ width: '180px', display: 'flex', 'justifyContent': 'space-between', alignItems: 'center' }}>
                     <img src="/assets/logo/spiderman.png" alt="spiderman" height='50' />
-                    <NavLink className="navbar-brand" to='/dc' >AppHeroes</NavLink>
+                    <NavLink className="navbar-brand" to='/dashboard/dc' >AppHeroes</NavLink>
                 </div>
 
                 <div>
@@ -46,7 +46,6 @@ const NavbarC: React.FC = () => {
                     <span className='text-white'>{stateAuth?.user}</span>
                     <button className='btn btn-danger mx-2'
                         onClick={() => {
-                            console.log('first')
 
                             const action = {
                                 type: EAuth.logout

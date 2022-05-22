@@ -11,10 +11,7 @@ function App() {
   }
 
   const [stateAuth, dispatch] = useReducer(storeLogin, {}, init)
-  console.log(stateAuth);
   useEffect(() => {
-    // console.log(JSON.stringify(stateAuth));
-    // console.log(stateAuth, 'stateAuth');
     localStorage.setItem(EAuth.login, JSON.stringify(stateAuth))
   }, [stateAuth])
 

@@ -23,7 +23,6 @@ const LoginV = () => {
     }
 
     const formValid: TValidateForm = (user, password): boolean => {
-        console.log(user, password);
         if (!user.trim().length || !password.trim().length) {
             alert('Verifique los Datos Ingresados')
             return false
