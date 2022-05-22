@@ -7,12 +7,14 @@ import { EAuth } from "./store/auth/enum";
 function App() {
 
   const init = () => {
-    return localStorage.getItem(EAuth.login) || { logged: false }
+    return JSON.parse(localStorage.getItem(EAuth.login) as string) || { logged: false }
   }
 
   const [stateAuth, dispatch] = useReducer(storeLogin, {}, init)
-
+  console.log(stateAuth);
   useEffect(() => {
+    // console.log(JSON.stringify(stateAuth));
+    // console.log(stateAuth, 'stateAuth');
     localStorage.setItem(EAuth.login, JSON.stringify(stateAuth))
   }, [stateAuth])
 

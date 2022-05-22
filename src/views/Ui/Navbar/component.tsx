@@ -1,6 +1,12 @@
-import { NavLink } from 'react-router-dom'
+import { useContext } from 'react'
+import { NavLink, useNavigate } from 'react-router-dom'
+import { loginContext } from '../../../context/auth/loginContext'
+import { EAuth } from '../../../store/auth/enum'
 
 const NavbarC: React.FC = () => {
+    const { stateAuth, dispatch } = useContext(loginContext)
+    const router = useNavigate()
+
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <div className="container">
@@ -36,16 +42,20 @@ const NavbarC: React.FC = () => {
                     </ul>
                 </div>
 
-                <div>
-                    <ul className="navbar-nav">
-                        <li
-                            className="nav-item">
-                            <NavLink
-                                className={({ isActive }) => 'nav-link ' + (isActive && 'active')}
-                                to='/logout'>Logout
-                            </NavLink>
-                        </li>
-                    </ul>
+                <div className='d-flex justify-content-center align-items-center'>
+                    <span className='text-white'>{stateAuth?.user}</span>
+                    <button className='btn btn-danger mx-2'
+                        onClick={() => {
+                            console.log('first')
+
+                            const action = {
+                                type: EAuth.logout
+                            }
+
+                            dispatch!(action)
+                            router('/')
+
+                        }}>Logout</button>
                 </div>
             </div>
         </nav>
